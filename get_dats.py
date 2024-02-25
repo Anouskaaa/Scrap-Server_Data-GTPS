@@ -30,7 +30,7 @@ def main():
             print(f"Getting https data : \n\n{resp.text}")
         else:
             print("No Server Data Here? Only These")
-            print(f"\n {resp.text}")
+            print(f"\n\n{resp.text}")
 
 
 
