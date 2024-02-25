@@ -56,6 +56,6 @@ def main():
 
 
 if __name__ == "__main__":
-    
-    print("\nThis Scrapper Create By Sann\n")
+
+    print("\nThis Scrapper Create By DucKr0s3\n")
     main()
