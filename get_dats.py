@@ -34,11 +34,13 @@ def main():
     arg1 = sys.argv[1]
     
     http_server_dat_url = f"http://{arg1}/growtopia/server_data.php"
-    resp = requests.get(http_server_dat_url)        
+    resphttp = requests.get(http_server_dat_url)        
     
+    https_server_dat_url = f"https://{arg1}/growtopia/server_data.php"
+    resphttps = requests.get(https_server_dat_url)
     #Check if the site is blocked/Error
     #Status Code 200 == Is OK
-    if resp.status_code == 200:
+    if resphttp.status_code == 200 or resphttps.status_code == 200:
         try:
             httpResp(arg1)
 
@@ -46,8 +48,7 @@ def main():
             httpsResp(arg1)
     else:
         sleep(2)
-        print(f"\nError Status Code : {resp.status_code}")
-        print(resp.text)
+        print(f"\nError Status Code By Http/Https : {resphttp.status_code}/{resphttps.status_code}")
 
 
 
